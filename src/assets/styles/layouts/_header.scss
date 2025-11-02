@@ -1,0 +1,67 @@
+@use "../theme" as *;
+@use "../mixins" as *;
+
+
+.nav__link:hover {
+  color: $color-accent-hover;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  color: $color-light;
+  background-color: $color-dark;
+  box-shadow: $box-shadow;
+
+  &__container {
+    @include flex-center;
+
+    justify-content: space-between;
+    padding: $spacing-sm $spacing-md;
+  }
+
+  &__title {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    font-size: $font-size-lg;
+    font-weight: 700;
+    color: $color-secondary;
+
+    i {
+      font-size: 1.3rem;
+      color: $color-accent;
+    }
+  }
+
+  &__nav {
+    .nav__list {
+      display: flex;
+      gap: $spacing-md;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+
+      .nav__link {
+        font-weight: 500;
+        color: $color-secondary;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+    }
+  }
+}
+
+@include respond-to(tablet) {
+  .header__container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav__list {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

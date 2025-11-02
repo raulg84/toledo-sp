@@ -1,0 +1,69 @@
+@use "../theme" as *;
+@use "../mixins" as *;
+@use "sass:color";
+
+
+.contact {
+  padding: $spacing-lg $spacing-md;
+  color: $color-dark;
+  text-align: center;
+  background-color: $color-light;
+
+  &__title {
+    margin-bottom: $spacing-md;
+    font-size: $font-size-xl;
+    color: $color-primary;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  &__label {
+    font-weight: 600;
+    color: $color-dark;
+    text-align: left;
+  }
+
+  &__textarea,
+  &__input {
+    width: 100%;
+    padding: $spacing-sm;
+    font-family: $font-sans;
+    font-size: $font-size-base;
+    border: 1px solid color.scale($color-dark, $lightness: 30%);
+    border-radius: $border-radius;
+  }
+
+  &__textarea:focus,
+  &__input:focus {
+    outline: none;
+    border-color: $color-accent;
+    box-shadow: 0 0 4px color.scale($color-accent, $lightness: -10%);
+  }
+
+  &__button {
+    padding: $spacing-sm $spacing-md;
+    font-weight: 600;
+    color: $color-light;
+    cursor: pointer;
+    background-color: $color-primary;
+    border: none;
+    border-radius: $border-radius;
+    transition: background-color 0.3s ease;
+  }
+
+  &__button:hover {
+    background-color: $color-primary-hover;
+  }
+}
+
+@include respond-to(tablet) {
+  .contact {
+    padding: $spacing-lg;
+  }
+}

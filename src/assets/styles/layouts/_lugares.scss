@@ -1,0 +1,66 @@
+@use "../theme" as *;
+@use "../mixins" as *;
+
+
+.section--dark {
+  padding: $spacing-lg $spacing-md;
+  color: $color-light;
+  text-align: center;
+  background-color: $color-dark;
+
+  .section__title {
+    margin-bottom: $spacing-md;
+    font-size: $font-size-xl;
+    color: $color-accent;
+  }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-md;
+
+    &__item {
+      padding: $spacing-md;
+      overflow: hidden;
+      background-color: $color-primary;
+      border-radius: $border-radius;
+      box-shadow: 0 4px 8px rgb(0 0 0 / 15%);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+      img {
+        width: 100%;
+        height: auto;
+        margin-bottom: $spacing-sm;
+        border-radius: $border-radius;
+      }
+
+      h3 {
+        margin-bottom: $spacing-xs;
+        font-size: $font-size-lg;
+        color: $color-light;
+      }
+
+      p {
+        font-size: $font-size-base;
+        line-height: 1.5;
+      }
+
+      &:hover {
+        box-shadow: 0 6px 12px rgb(0 0 0 / 25%);
+        transform: translateY(-5px);
+      }
+    }
+  }
+
+  @include respond-to(tablet) {
+    .gallery {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @include respond-to(desktop) {
+    .gallery {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}

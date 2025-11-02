@@ -1,0 +1,50 @@
+@use "sass:color";
+
+/* ===========
+   CONSTANTES
+   =========== */
+
+/* Colores principales */
+$color-primary: #7b4a27;
+$color-secondary: #f7e9c0;
+$color-accent: #ffd57a;
+$color-dark: #3a2a20;
+$color-light: #f9f4ec;
+$color-shadow: rgb(0 0 0 / 20%);
+
+/* Hover */
+$color-primary-hover: color.scale($color-primary, $lightness: -10%);
+$color-secondary-hover: color.scale($color-secondary, $lightness: -15%);
+$color-accent-hover: color.scale($color-accent, $lightness: -15%);
+$color-muted: color.scale($color-light, $lightness: -10%);
+
+/* === Tipografía === */
+$font-sans: -apple-system, blinkmacsystemfont, "Segoe UI", "Roboto",
+  "Helvetica Neue", "Arial", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+  "Segoe UI Symbol";
+$font-serif: "Merriweather", "Georgia", serif;
+
+/* Tamaños fuente */
+$font-size-xs: 0.75rem;
+$font-size-sm: 0.875rem;
+$font-size-base: 1rem;
+$font-size-lg: 1.25rem;
+$font-size-xl: 1.75rem;
+$font-size-xxl: 2.5rem;
+
+/* Espacios */
+$spacing-xs: 0.5rem;
+$spacing-sm: 1rem;
+$spacing-md: 2rem;
+$spacing-lg: 3rem;
+$spacing-xl: 5rem;
+
+/* Bordes */
+$border-radius: 8px;
+$box-shadow: 0 4px 10px $color-shadow;
+
+/*  Breakpoints */
+$mq-min-width: 420px;
+$mq-tablet: 768px;
+$mq-desktop: 1200px;
+

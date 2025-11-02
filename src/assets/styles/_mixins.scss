@@ -1,0 +1,49 @@
+@use "sass:color";
+@use "theme" as *;
+
+/* ================
+   MIXINS GLOBALES
+   ================ */
+
+/**
+ * Mixin media queries (First Mobile)
+ 
+ * Example usage:
+ * @include respond-to(tablet)
+ * @include respond-to(desktop)
+ 
+ */
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == tablet {
+    @media (min-width: $mq-tablet) {
+      @content;
+    }
+  } @else if $breakpoint == desktop {
+    @media (min-width: $mq-desktop) {
+      @content;
+    }
+  }
+}
+
+/**
+ * Mixin sombras
+ *
+ * Example usage:
+ * @include soft-shadow;
+ */
+@mixin soft-shadow {
+  border-radius: $border-radius;
+  box-shadow: 0 4px 8px rgb(0 0 0 / 15%);
+}
+
+/**
+ * Mixin centrar
+ *
+ * Example usage:
+ * @include flex-center;
+ */
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

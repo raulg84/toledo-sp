@@ -1,0 +1,26 @@
+@use "../theme" as *;
+@use "../mixins" as *;
+
+/* ==================
+   FOOTER
+   =========== */
+
+.footer {
+  padding: $spacing-md $spacing-sm;
+  font-family: $font-sans;
+  font-size: $font-size-base;
+  line-height: 1.5;
+  color: $color-light;
+  text-align: center;
+  background-color: $color-dark;
+
+  &__text {
+    margin: 0;
+    color: $color-light;
+  }
+
+  @include respond-to(tablet) {
+    padding: $spacing-lg;
+    font-size: $font-size-lg;
+  }
+}

@@ -9,11 +9,22 @@
 @use "dependencies";
 
 /**
- * Import layouts
- * It's a best practice to use a different partial for each page
+ * Import theme and mixins
  */
+@use "theme";
+@use "mixins";
 
-@use "layouts/home";
+/**
+ * Import layouts
+ */
+@use "layouts/base";
+@use "layouts/header";
+@use "layouts/hero";
+@use "layouts/historia";
+@use "layouts/lugares";
+@use "layouts/gastronomia";
+@use "layouts/contacto";
+@use "layouts/footer";
 
 /**
  * Do NOT include anything else in this file!

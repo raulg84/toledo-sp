@@ -1,0 +1,93 @@
+@use "../theme" as *;
+@use "../mixins" as *;
+
+/*  Reset y configuración global */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  font-family: $font-sans;
+  font-size: $font-size-base;
+  line-height: 1.6;
+  color: $color-dark;
+  background-color: $color-light;
+}
+
+img,
+picture,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+a {
+  color: $color-primary;
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: $color-primary-hover;
+  }
+}
+
+main {
+  flex: 1 0 auto;
+  width: 100%;
+}
+
+section {
+  width: 100%;
+  max-width: 1200px;
+  padding: $spacing-lg $spacing-md;
+  margin: 0 auto;
+
+  @include respond-to(tablet) {
+    padding: $spacing-lg $spacing-lg;
+  }
+
+  @include respond-to(desktop) {
+    padding: $spacing-xl $spacing-lg;
+  }
+}
+
+h1,
+h2,
+h3 {
+  margin-bottom: $spacing-sm;
+  font-family: $font-serif;
+  line-height: 1.2;
+  color: $color-primary;
+}
+
+p {
+  margin-bottom: $spacing-sm;
+  font-size: $font-size-base;
+  color: $color-dark;
+}
+
+button,
+.btn {
+  display: inline-block;
+  padding: $spacing-sm $spacing-md;
+  font-size: $font-size-base;
+  color: $color-light;
+  cursor: pointer;
+  background-color: $color-primary;
+  border: none;
+  border-radius: $border-radius;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: $color-primary-hover;
+  }
+}
